@@ -1,0 +1,14 @@
+.imageprev{
+	margin: 10px;
+}
+.bgshow{
+	min-width: 200px;
+	background-size: cover;
+	min-height: 300px;
+	padding: 30px;
+}
+.details{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

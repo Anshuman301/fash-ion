@@ -1,26 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route,Switch,Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {actionUser} from './redux/UserReducer/ActionUser';
 import './App.css';
+import Homepage from './Pages/Homepage/Homepage';
+import Shoppage from './Pages/Shoppage/Shoppage';
+import Header from './Component/Header/Header';
+import Signinup from './Pages/Sign-in-up-page/Signinup';
+import { auth,createUserProfile } from './firebase/firebase.util.js';
+class App extends React.Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  unsubscribeFromAuth=null
+  componentDidMount(){
+   const {actionUser} = this.props;
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth=>{
+      if(userAuth) {
+        const userRef = await createUserProfile(userAuth);
+        userRef.onSnapshot(snapShot=>{
+          actionUser({
+            currentUser:{
+              id:snapShot.id,
+              ...snapShot.data()
+            }
+          })
+        });
+      }else{
+        actionUser(userAuth)
+      }
+    });
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
+  }
+
+  render(){
+    return(
+      <div>
+        <Header/>
+        <Switch>
+        	<Route exact path='/' component={Homepage}/>
+        	<Route exact path='/shop' component={Shoppage}/>
+          <Route exact path='/signin' render={()=>this.props.currentUser ?(<Redirect to='/'/>):<Signinup/>}/>
+       </Switch>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps=(state)=>({
+  currentUser: state.user.currentUser
+})
+const mapDispatchToProps=(dispatch)=>({
+    actionUser : (user)=>dispatch(actionUser(user))
+})
+export default connect(mapStateToProps,mapDispatchToProps)(App);

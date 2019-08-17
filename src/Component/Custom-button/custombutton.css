@@ -1,0 +1,20 @@
+.buttoncss{
+	width:40%;
+	height: 100%;
+	padding: 20px 0;
+	border:1px solid black;
+	color:white;
+	background:black;
+	cursor: pointer;
+	font-family: monospace;
+}
+.buttoncss:hover{
+	background-color: rgba(220, 226, 227,0.5);
+	color: black;
+	border:none;
+}
+.google-sign-in{
+	background-color: blue;
+	border:none;
+
+}

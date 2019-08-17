@@ -1,0 +1,21 @@
+.forminput{
+	position: relative;
+	margin: 35px 0;
+}
+.input{
+	border:none;
+	border-bottom: 1px solid lightgray;
+	padding: 10px 10px 5px 5px;
+	font-size: 1.2em;
+	width:70%;
+}
+.labelcss{
+	position: absolute;
+	color: lightgray;
+	left: 0;
+	font-size: 28px;
+} 
+.shrink{
+	transition: 300ms ease all;
+	top:-30px;
+}

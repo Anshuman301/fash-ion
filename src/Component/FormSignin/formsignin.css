@@ -1,0 +1,8 @@
+.formsignin{
+	width:50%;
+}
+.buttcss{
+	width: 79%;
+	display: flex;
+	justify-content: space-around;
+}

@@ -1,0 +1,27 @@
+.header{
+	display: flex;
+	justify-content: space-between;
+	width: 95%;
+	height: 70px;
+	margin: auto;
+}
+.logostyle{
+	height: 100%;
+}
+.options{
+	display: flex;
+	justify-content: flex-end;
+	margin-top:30px; 
+}
+.option{
+	padding: 0 10px;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+.active-option{
+	color: lightgray;
+	text-decoration: underline;
+}

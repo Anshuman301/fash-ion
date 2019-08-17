@@ -1,0 +1,41 @@
+.menuitem{
+	min-width: 30%;
+	min-height: 300px;
+	flex:1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin:10px;
+	overflow: hidden;
+}
+.bg-image{
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	overflow: hidden;
+}
+.menuitem:hover .bg-image{
+	transform: scale(1.1);
+	transition: 4s ease-in;
+	cursor: pointer;
+}
+.content{
+	background:rgba(132, 196, 193,0.2);
+	box-shadow: 1px 2px 3px;
+	cursor: pointer;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	align-content: center;
+	flex-direction: column;
+	justify-content: center;
+}
+.content:hover{
+	transition: 1s ease-in-out;
+	transform: scale(1.1);
+}
+.partname{
+	margin: 0;
+	text-transform: uppercase;
+}
