@@ -1,0 +1,18 @@
+.cartdrop{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 20%;
+	float: right;
+	background:white;
+	margin-right: 30px;
+	opacity: 0.5;
+	border:1px solid black; 
+}
+.cartitem{
+	height: 300px;
+	overflow-y: scroll;
+}
+.button{
+	margin: 0 auto;
+}
