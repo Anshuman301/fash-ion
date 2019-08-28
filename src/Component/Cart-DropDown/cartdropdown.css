@@ -6,12 +6,25 @@
 	float: right;
 	background:white;
 	margin-right: 30px;
-	opacity: 0.5;
-	border:1px solid black; 
+	opacity: 0.9;
+	border:1px solid black;
+	position: relative;
+	top:70px; 
+	z-index: 1;
 }
 .cartitem{
 	height: 300px;
 	overflow-y: scroll;
+}
+.itemcss{
+	display: flex;
+	flex-direction: column;
+	opacity: 1;
+}
+.empty{
+	position: relative;
+	top: 150px;
+	left: 50px;
 }
 .button{
 	margin: 0 auto;

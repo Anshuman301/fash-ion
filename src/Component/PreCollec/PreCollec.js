@@ -8,7 +8,7 @@ const PreCollec=({title,items})=>{
 			<div className="styleitem">
 			{
 				items.filter((it,idx)=>idx < 4)
-				.map(({id,...otherProps}) =><ImagePrev key={id} {...otherProps}/>
+				.map(it => <ImagePrev key={it.id} item={it}/>
 				)
 			}
 			</div>

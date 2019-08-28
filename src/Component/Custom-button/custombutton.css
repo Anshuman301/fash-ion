@@ -1,11 +1,9 @@
 .buttoncss{
-	height: 100%;
-	padding: 20px 10px;
-	border:1px solid black;
-	color:white;
-	background:black;
 	cursor: pointer;
-	font-family: monospace;
+	padding: 15px 30px;
+	background:black;
+	color:white;
+	border:none;
 }
 .buttoncss:hover{
 	background-color: rgba(220, 226, 227,0.5);
@@ -15,5 +13,18 @@
 .google-sign-in{
 	background-color: blue;
 	border:none;
+}
+.inverted{
+	background: white;
+	color:black;
+	margin-top: 252px;
+	margin-left: 29px;
+	opacity: 0.7;
+	display: none;
+}
+.inverted:hover{
+	background: black !important;
+	color:white;
+	opacity: 0.7;
 
 }

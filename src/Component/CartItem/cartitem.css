@@ -1,0 +1,16 @@
+.item{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border:1px solid black;
+	padding: 5px 10px;
+	align-items: center;
+}
+.details{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	width: 75%;
+	margin-left: 25px;
+}

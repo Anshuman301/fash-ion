@@ -1,5 +1,10 @@
 .imageprev{
-	margin: 10px;
+	margin: 5px;
+}
+.imageprev:hover .bgshow{
+	background: white;
+	opacity: 0.7;
+	background-repeat: no-repeat;
 }
 .bgshow{
 	min-width: 200px;
@@ -7,7 +12,10 @@
 	min-height: 300px;
 	padding: 30px;
 }
-.details{
+.bgshow:hover .inverted{
+	display: flex;
+}
+.detailsimage{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;

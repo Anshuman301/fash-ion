@@ -1,0 +1,27 @@
+.carthead{
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+	box-sizing: border-box;
+	border-bottom: 1px solid lightgray;
+}
+.imgcss{
+	width:20%;
+
+}
+.setimg{
+	width: 100%;
+}
+.name,.quanincdec,.price,.iconx{
+	align-self: center;
+	width:20%;
+	text-align: center;
+}
+.quanincdec span{
+	font-size: 2em;
+	padding: 10px;
+}
+
+.iconx{
+	cursor: pointer;
+}

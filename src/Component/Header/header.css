@@ -1,8 +1,5 @@
 .fixed{
-	position: fixed;
-	top: 0;
-	width: 100%;
-	z-index: 1;
+	border:1px solid black;
 }
 .header{
 	display: flex;
@@ -11,6 +8,10 @@
 	width:95%;
 	margin: 0 auto;
 	background-color: rgba(218, 237, 236,0.5);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
 }
 .logostyle{
 	height: 100%;
@@ -23,7 +24,15 @@
 
 }
 .option{
-	padding: 0 15px;
+	padding: 0 11px;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+.option2{
+	padding: 0 25px;
 	text-decoration: none;
 	font-weight: bold;
 	color: black;
