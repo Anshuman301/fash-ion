@@ -1,26 +1,16 @@
 import React from 'react';
-import {SHOP_DATA} from '../../shopdata';
-import PreCollec from '../../Component/PreCollec/PreCollec';
+import {Route,Switch} from 'react-router-dom';
+import CollectionOverview from '../../Component/CollectionOverview/CollectionOverview';
+import CategoryPage from '../CategoryPage/CategoryPage';
 import './shoppage.css';
-class Shoppage extends React.Component{
-	constructor(props){
-		super(props);
-		this.state={
-			collections:SHOP_DATA
-		}
-	}
-
-	render(){
-		const{collections}=this.state;
-		return(
-			<div className="shoppage">
-			{
-				collections.map(({id,...otherprops})=>(
-				<PreCollec key={id} {...otherprops}/>
-				))
-			}
-			</div>
-		)
-	}
+const Shoppage=({match})=>{
+	return(
+		<div className="shoppage">
+		<Switch>
+			<Route exact path={`${match.path}`} component={CollectionOverview}/>
+         	<Route path={`${match.path}/:name`} component={CategoryPage}/>
+		</Switch>
+		</div>
+	)
 }
 export default Shoppage;
