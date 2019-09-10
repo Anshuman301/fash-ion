@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartState,sumCartItems} from '../../redux/CartReducer/Cart.select';
 import CheckItem from '../../Component/CheckItem/CheckItem';
+import StripeCheckoutButton from '../../Component/Stripe-button/Stripe-button';
 import './checkout.css';
 const Checkout=({cartitems,total})=>{
 	return(
@@ -23,6 +24,12 @@ const Checkout=({cartitems,total})=>{
 			}
 			<div className="totalcss">
 				<span>{`Total : $${total}`}</span>
+			</div>
+			<div className="demodesc">
+				<span>/* For demo purposes: Use card no:4242 4242 4242 4242, Expiry Date:01/20 Cvv:123 */</span>
+			</div>
+			<div className="stripebutcss">
+				<StripeCheckoutButton price={total}/>
 			</div>
 		</div>
 	)

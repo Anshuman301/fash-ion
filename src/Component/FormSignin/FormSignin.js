@@ -1,4 +1,4 @@
-import React from 'react';
+	import React from 'react';
 import {auth,signInWithGoogle} from '../../firebase/firebase.util';
 import Forminput from '../Forminput/Forminput';
 import CustomButton from '../Custom-button/CustomButton';
@@ -34,8 +34,7 @@ class FormSignin extends React.Component{
 						label="Email" 
 						name="email" 
 						type="email" 
-						value={this.state.email} 
-						required 
+						value={this.state.email}  
 						handleChange={this.handleChange}
 						/>
 						<Forminput 
@@ -43,7 +42,6 @@ class FormSignin extends React.Component{
 						name="password" 
 						type="password" 
 						value={this.state.password} 
-						required 
 						onChange={this.handleChange}
 						/>
 					<div className="buttcss">

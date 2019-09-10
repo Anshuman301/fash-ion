@@ -7,7 +7,7 @@ import {actionCart} from '../../redux/CartReducer/ActionCart';
 
 const CartIcon=({actionCart,totalQuantity})=>{
 	return(
-		<div onClick={actionCart} style={{cursor:"pointer"}}>
+		<div onClick={actionCart} className="divbag">
 			<ShopBag className="bagcss"/>
 			<span className="count-item">{totalQuantity}</span>
 		</div>

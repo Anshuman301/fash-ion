@@ -1,14 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import {createStructuredSelector} from 'reselect';
 import CustomButton from '../Custom-button/CustomButton';
 import {actionAdditem} from '../../redux/CartReducer/ActionCart';
+import {selectcurrentUser} from '../../redux/UserReducer/User.selector';
 import './imageprev.css'
-const ImagePrev=({item,actionAdditem})=>{
+const ImagePrev=({item,actionAdditem,currentUser,history})=>{
 	const {id,imageUrl,name,price} = item;
 	return(
 		<div className="imageprev">
 			<div className="bgshow" style={{backgroundImage:`url(${imageUrl})`}}>
-			<CustomButton onClick={()=>actionAdditem({id,imageUrl,name,price})}
+			<CustomButton onClick={()=>{
+				currentUser ? 
+				actionAdditem({id,imageUrl,name,price})
+				:
+				history.push('/signin')}
+			}
 			isinverted={true}>
 			add to cart
 			</CustomButton>
@@ -23,4 +31,7 @@ const ImagePrev=({item,actionAdditem})=>{
 const mapDispatchToProps=dispatch=>({
 	actionAdditem:(item)=>dispatch(actionAdditem(item))
 })
-export default connect(null,mapDispatchToProps)(ImagePrev);
+const mapStateToProps=createStructuredSelector({
+	currentUser:selectcurrentUser
+})
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(ImagePrev));

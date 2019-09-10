@@ -21,11 +21,13 @@ const Header=({currentUser,hidden})=>{
 				<NavLink className="option" exact to='/contact' activeClassName="active-option">CONTACT</NavLink>
 				{
 					currentUser ?
+					<div className="rowcss">
 					<div className="option" onClick={()=>auth.signOut()}>SIGN_OUT</div>
+					<CartIcon/>
+					</div>
 					:
 					<NavLink className="option2" exact to='/signin' activeClassName="active-option">SIGN_IN</NavLink>
 				}
-				<CartIcon/>
 			</div>
 		</div>
 		{

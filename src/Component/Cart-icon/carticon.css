@@ -1,12 +1,17 @@
-
+.divbag{
+	display: flex;
+	flex-direction: row;
+}
 .bagcss{
 	height: 100%;
 	position: relative;
 	top: -15px;
+	cursor: pointer;
 }
 .count-item{
-	position: absolute;
-	top:20px;
-	right: 80px;
+	position:relative;
+	top:-10px;
+	left:-30px;
 	font-size: 30px; 
+	width:25%;
 }
