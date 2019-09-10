@@ -29,13 +29,16 @@ const Header=({currentUser,hidden})=>{
 					<NavLink className="option2" exact to='/signin' activeClassName="active-option">SIGN_IN</NavLink>
 				}
 			</div>
-		</div>
-		{
+			{
 			hidden ?
 			null
 			:
+			currentUser ?
 			<CartDropDown/>
+			:
+			null
 		}
+		</div>
 		</div>
 	)
 }

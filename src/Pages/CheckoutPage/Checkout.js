@@ -26,7 +26,7 @@ const Checkout=({cartitems,total})=>{
 				<span>{`Total : $${total}`}</span>
 			</div>
 			<div className="demodesc">
-				<span>/* For demo purposes: Use card no:4242 4242 4242 4242, Expiry Date:01/20 Cvv:123 */</span>
+				<span>...For demo purposes: Use card no:4242 4242 4242 4242, Expiry Date:01/20 Cvv:123...</span>
 			</div>
 			<div className="stripebutcss">
 				<StripeCheckoutButton price={total}/>

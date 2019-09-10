@@ -40,8 +40,8 @@
 .rowcss{
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
-	width: 100%;
+	justify-content: flex-start;
+	width: 50%;
 }
 .active-option{
 	color: lightgray;
